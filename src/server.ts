@@ -1,7 +1,14 @@
 import express from 'express';
-import { router } from './router';
+import 'dotenv/config';
+import { authRouter } from './routes/authRoutes';
+import { connectDB } from './config/db';
+
+
+connectDB();
+
 
 export const app = express();
 
+app.use(express.json())
 
-app.use('/', router);
+app.use('/', authRouter);

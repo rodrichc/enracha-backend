@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose'
+import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IHabitLog extends Document {
     habitId: string
@@ -21,5 +21,6 @@ const habitLogSchema = new Schema({
         type: Boolean,
         default: false,
     },
-})
-export const HabitLog = mongoose.model<IHabitLog>('HabitLog', habitLogSchema)
+});
+
+export const HabitLog = mongoose.model<IHabitLog>('HabitLog', habitLogSchema);

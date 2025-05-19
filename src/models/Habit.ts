@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose'
+import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IHabit extends Document {
     userId: string
@@ -21,6 +21,6 @@ const habitSchema = new Schema({
         type: String,
         default: '',
     },
-})
+});
 
-export const Habit = mongoose.model<IHabit>('Habit', habitSchema)
+export const Habit = mongoose.model<IHabit>('Habit', habitSchema);
