@@ -6,7 +6,7 @@ import { createAccount, login } from '../controllers/authController';
 export const authRouter = Router();
 
 
-authRouter.post('/auth/register',
+authRouter.post('/register',
     body('username')
         .notEmpty()
         .withMessage('El nombre de usuario no puede ir vacio'),
@@ -23,7 +23,7 @@ authRouter.post('/auth/register',
     createAccount
 );
 
-authRouter.post('/auth/login',
+authRouter.post('/login',
     body('email')
         .isEmail()
         .withMessage('E-mail no válido'),

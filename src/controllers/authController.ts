@@ -43,7 +43,7 @@ export const login = async (req: Request, res: Response) => {
     const isPasswordCorrect = await checkPassword(password, user.password);
     if(!isPasswordCorrect){
         const error = new Error('Contraseña Incorrecta');
-        return res.status(400).json({ error: error.message });
+        return res.status(401).json({ error: error.message });
     }
 
     const token = generateJWT({ id: user._id });
