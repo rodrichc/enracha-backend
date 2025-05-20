@@ -1,16 +1,16 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IHabit extends Document {
-    userId: string
-    name: string
-    description: string
+    userId: mongoose.Types.ObjectId;
+    name: string;
+    description: string;
 }
 
 const habitSchema = new Schema({
     userId: {
-        type: String,
-        required: true,
-        trim: true,
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
     },
     name: {
         type: String,
