@@ -1,16 +1,16 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IHabitLog extends Document {
-    habitId: string
-    date: Date
-    completed: boolean
+    habitId: mongoose.Types.ObjectId;
+    date: Date;
+    completed: boolean;
 }
 
 const habitLogSchema = new Schema({
     habitId: {
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Habit',
         required: true,
-        trim: true,
     },
     date: {
         type: Date,

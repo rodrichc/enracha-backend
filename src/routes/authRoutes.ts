@@ -15,7 +15,7 @@ authRouter.post('/register',
         .withMessage('El Nombre no puede ir vacio'),
     body('email')
         .isEmail()
-        .withMessage('E-mail no válido'),
+        .withMessage('Email no válido'),
     body('password')
         .isLength({ min: 8 })
         .withMessage('La contraseña debe tener mínimo 8 caracteres'),

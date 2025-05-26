@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { body } from 'express-validator';
-import { createHabit, getAllHabits } from '../controllers/habitController';
+import { createHabit, deleteHabit, getAllHabits, getHabit, updateHabit } from '../controllers/habitController';
 import { authenticate } from '../middleware/auth';
 import { checkInputErrors } from '../middleware/validation';
 
@@ -15,3 +15,9 @@ habitRouter.post('/create', authenticate,
     checkInputErrors,
     createHabit
 );
+
+habitRouter.get('/:habitId', authenticate, getHabit); 
+
+habitRouter.delete('/:habitId/update', authenticate, updateHabit); //!!!!!!!!
+
+habitRouter.delete('/:habitId/delete', authenticate, deleteHabit); //!!!!!!!!!

@@ -4,6 +4,7 @@ export interface IHabit extends Document {
     userId: mongoose.Types.ObjectId;
     name: string;
     description: string;
+    createdAt: Date;
 }
 
 const habitSchema = new Schema({
@@ -20,6 +21,10 @@ const habitSchema = new Schema({
     description: {
         type: String,
         default: '',
+    },
+    createdAt: {
+        type: Date,
+        required: true,
     },
 });
 
